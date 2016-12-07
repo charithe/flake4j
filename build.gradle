@@ -25,7 +25,6 @@ buildscript {
 }
 
 group 'com.github.charithe'
-version '1.0.0-SNAPSHOT'
 
 apply plugin: 'java'
 apply plugin: 'maven'
@@ -83,6 +82,8 @@ uploadArchives {
             pom.project {
                 name 'Flake4J ID Generator'
                 packaging 'jar'
+                description 'A Java implementation of the Flake decentralized, k-ordered ID generation algorithm by Boundary'
+                url 'https://github.com/charithe/flake4j'
 
                 scm {
                     connection 'scm:git:ssh://git@github.com/charithe/flake4j.git'

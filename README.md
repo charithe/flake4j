@@ -10,6 +10,15 @@ single node (if the MAC address based node identification is used).
 Usage
 -----
 
+Artifacts are available on Maven Central.
+
+Gradle:
+
+```
+compile group: 'com.github.charithe', name: 'flake4j', version: '1.0.0'
+```
+
+
 ```java
 // Create an ID generator that uses the machine's MAC address for node identification
 Flake4J f4j = Flake4J.newInstance();
