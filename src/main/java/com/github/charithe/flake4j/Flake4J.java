@@ -33,6 +33,7 @@ public class Flake4J {
     private static final int MAX_SEQ = 0xFFFF;
     private static final int ID_SIZE_BYTES = 16;
     private static final int NODE_ID_BYTES = 6;
+    private static final String HEX_VALUES = "0123456789abcdef";
     private final Lock lock = new ReentrantLock(true);
     private final byte[] nodeId;
     private final Clock clock;
@@ -114,9 +115,9 @@ public class Flake4J {
     }
 
     public static String asHexString(byte[] id) {
-        StringBuilder sb = new StringBuilder();
-        for (byte component : id) {
-            sb.append(String.format("%02x", component));
+        final StringBuilder sb = new StringBuilder(2 * id.length);
+        for (final byte b : id) {
+            sb.append(HEX_VALUES.charAt((b & 0xF0) >> 4)).append(HEX_VALUES.charAt((b & 0x0F)));
         }
         return sb.toString();
     }
