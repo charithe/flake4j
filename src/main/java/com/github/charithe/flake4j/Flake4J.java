@@ -123,10 +123,8 @@ public class Flake4J {
 
     public static String asComponentString(byte[] id) {
         ByteBuffer buffer = ByteBuffer.wrap(id);
-        long ts = buffer.getLong();
         byte[] node = new byte[NODE_ID_BYTES];
         buffer.get(node);
-        int seq = buffer.getShort();
-        return String.format("%d-%d-%d", ts, new BigInteger(node).longValue(), seq);
+        return buffer.getLong() + "-" + new BigInteger(node).longValue() + "-" + buffer.getShort();
     }
 }
