@@ -6,6 +6,7 @@ This is an implementation of the [Flake](https://github.com/boundary/flake) dece
 There is no server implementation yet. To avoid non-unique IDs, it is the programmer's responsibility to  ensure that only one instance of the ID generator is active in a 
 single node (if the MAC address based node identification is used). 
 
+This implementation generates 128-bit IDs.
 
 Usage
 -----
@@ -15,7 +16,7 @@ Artifacts are available on Maven Central.
 Gradle:
 
 ```
-compile group: 'com.github.charithe', name: 'flake4j', version: '1.0.0'
+compile group: 'com.github.charithe', name: 'flake4j', version: '1.0.1'
 ```
 
 
