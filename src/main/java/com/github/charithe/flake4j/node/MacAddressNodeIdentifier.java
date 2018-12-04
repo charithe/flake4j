@@ -54,7 +54,7 @@ public class MacAddressNodeIdentifier implements NodeIdentifier {
         Enumeration<NetworkInterface> nics = NetworkInterface.getNetworkInterfaces();
         while (nics.hasMoreElements()) {
             NetworkInterface currentNic = nics.nextElement();
-            if (!currentNic.isLoopback() && currentNic.isUp()) {
+            if (!currentNic.isLoopback() && currentNic.isUp() && (currentNic.getHardwareAddress() != null)) {
                 return Optional.of(currentNic.getHardwareAddress());
             }
         }
