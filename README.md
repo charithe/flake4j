@@ -16,7 +16,7 @@ Artifacts are available on Maven Central.
 Gradle:
 
 ```
-compile group: 'com.github.charithe', name: 'flake4j', version: '1.0.1'
+compile group: 'com.github.charithe', name: 'flake4j', version: '1.0.2'
 ```
 
 
